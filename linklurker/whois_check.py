@@ -4,11 +4,9 @@ from datetime import datetime
 def get_time_dif(date_to_check):
     current_date = datetime.now()
 
-    # Handle case where date_to_check could be a list
     if isinstance(date_to_check, list):
         date_to_check = date_to_check[0]
 
-    # Ensure date_to_check is not None
     if date_to_check is None:
         return None
 
@@ -24,11 +22,9 @@ def check_dns_records(url):
     try:
         results = whois.whois(url)
 
-        # Check if data is redacted
         if 'REDACT' in str(results.get('org', '')):
             private_info = True
         
-        # Check if domain was created or edited recently
         days_since_creation = get_time_dif(results.get('creation_date', None))
         days_since_edit = get_time_dif(results.get('updated_date', None))
         days_till_expiration = get_time_dif(results.get('expiration_date', None))
