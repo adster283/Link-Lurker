@@ -1,0 +1,7 @@
+# This file defines blocklists that are used to build the database
+
+blocklists:
+  ads:
+    - https://adaway.org/hosts.txt
+  phishing:
+    - https://github.com/hagezi/dns-blocklists/blob/main/adblock/fake.txt
