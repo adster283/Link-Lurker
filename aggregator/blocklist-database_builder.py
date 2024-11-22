@@ -60,7 +60,7 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
 
     # Connect to the database
-    conn = sqlite3.connect('domain.db')
+    conn = sqlite3.connect('../domain.db')
     cursor = conn.cursor()
 
     # Create tables
