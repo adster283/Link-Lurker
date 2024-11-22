@@ -4,4 +4,4 @@ blocklists:
   ads:
     - https://adaway.org/hosts.txt
   phishing:
-    - https://github.com/hagezi/dns-blocklists/blob/main/adblock/fake.txt
+    - https://v.firebog.net/hosts/RPiList-Phishing.txt
