@@ -1,7 +1,7 @@
 from fuzzywuzzy import fuzz
 
 def check_match(bad_domains, threshold=80):
-    good_domains = ['microsoft.com', 'nzpost.com', 'aupost.com']
+    good_domains = ['microsoft.com', 'nzpost.com', 'aupost.com', 'facebook.com', 'cloudflare.com']
     domains_found = []
 
     for bad_domain in bad_domains:
@@ -24,6 +24,6 @@ def check_chars(domain):
 
 if __name__ == '__main__':
     # Example test
-    # test_list = ['nzpost.net', 'm1crosoft.com', 'microsoft.com']
-    # check_match(test_list)
+    test_list = ['cl0udflare.com']
+    check_match(test_list)
     pass

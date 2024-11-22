@@ -27,7 +27,7 @@ def check_dns_records(url):
         
         days_since_creation = get_time_dif(results.get('creation_date', None))
         days_since_edit = get_time_dif(results.get('updated_date', None))
-        days_till_expiration = get_time_dif(results.get('expiration_date', None))
+        days_till_expiration = -get_time_dif(results.get('expiration_date', None))
 
         # TODO: registrar, country, status, nameservers
 
