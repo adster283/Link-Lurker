@@ -1,5 +1,7 @@
 # LinkLurker
 
+**Still very much a work in progress**
+
 **LinkLurker** is a minimalist, self-hosted tool designed to streamline the process of investigating potentially malicious domains. Whether you're analyzing suspicious links in phishing emails or reviewing security alerts, LinkLurker provides comprehensive details to help identify threats on a single, user-friendly page.
 
 ---
