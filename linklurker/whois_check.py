@@ -14,7 +14,6 @@ def get_time_dif(date_to_check):
     return days
 
 def check_dns_records(url):
-    private_info = False
     days_since_creation = None
     days_since_edit = None
     days_till_expiration = None
@@ -23,7 +22,10 @@ def check_dns_records(url):
         results = whois.whois(url)
 
         if 'REDACT' in str(results.get('org', '')):
-            private_info = True
+            domain_owner = None
+        else: 
+            domain_owner = str(results.get('org', ''))
+
         
         days_since_creation = get_time_dif(results.get('creation_date', None))
         days_since_edit = get_time_dif(results.get('updated_date', None))
@@ -31,7 +33,7 @@ def check_dns_records(url):
 
         # TODO: registrar, country, status, nameservers
 
-        return {'private_info' : private_info,
+        return {'domain_owner' : domain_owner,
                 'days_since_creation' : days_since_creation,
                 'days_since_edit' : days_since_edit,
                 'days_till_expiration' : days_till_expiration}

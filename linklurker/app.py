@@ -3,6 +3,7 @@ import sqlite3
 import os
 from whois_check import *
 from permutation_check import *
+from dns_lookup import *
 
 def search_database(search_url):
     try:
@@ -42,20 +43,22 @@ def search():
 
     whois_result = check_dns_records(domain)
 
-    fuzz_result = check_match([domain])
+    fuzz_result = check_match(domain)
 
     char_result = check_chars(domain)
 
+    dns_result = get_dns_records(domain)
+
     print(char_result)
 
-    # Pass all results to the template
     return render_template(
-        "results.html",  # This is the name of the HTML file in the templates folder
+        "results.html", 
         domain=domain,
         search_result=search_result,
         whois_result=whois_result,
         fuzz_result=fuzz_result,
         char_result=char_result,
+        dns_result=dns_result
     )
 
 if __name__ == "__main__":
